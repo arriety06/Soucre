@@ -1,15 +1,15 @@
-package com.girlkun.models.npc;
+package com.aurora.models.npc;
 
-import com.girlkun.consts.ConstNpc;
-import com.girlkun.models.map.Map;
-import com.girlkun.models.map.Zone;
-import com.girlkun.models.player.Player;
-import com.girlkun.server.Manager;
-import com.girlkun.network.io.Message;
-import com.girlkun.services.MapService;
-import com.girlkun.services.Service;
-import com.girlkun.utils.Logger;
-import com.girlkun.utils.Util;
+import com.aurora.consts.ConstNpc;
+import com.aurora.models.map.Map;
+import com.aurora.models.map.Zone;
+import com.aurora.models.player.Player;
+import com.aurora.server.Manager;
+import com.aurora.network.io.Message;
+import com.aurora.services.MapService;
+import com.aurora.services.Service;
+import com.aurora.utils.Logger;
+import com.aurora.utils.Util;
 
 /**
  *

@@ -1,5 +1,5 @@
-package com.girlkun.utils;
-import com.girlkun.utils.Logger;
+package com.aurora.utils;
+import com.aurora.utils.Logger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

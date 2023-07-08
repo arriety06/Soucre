@@ -1,22 +1,22 @@
-package com.girlkun.services.func;
+package com.aurora.services.func;
 
 import java.util.HashMap;
 import java.util.Map;
-import com.girlkun.models.item.Item;
-import com.girlkun.consts.ConstNpc;
-import com.girlkun.consts.ConstPlayer;
-import com.girlkun.models.item.Item.ItemOption;
-import com.girlkun.models.map.Zone;
-import com.girlkun.services.NpcService;
-import com.girlkun.models.player.Inventory;
-import com.girlkun.models.player.Player;
-import com.girlkun.services.Service;
-import com.girlkun.utils.Util;
-import com.girlkun.network.io.Message;
-import com.girlkun.services.ItemService;
-import com.girlkun.services.PlayerService;
-import com.girlkun.services.InventoryServiceNew;
-import com.girlkun.utils.Logger;
+import com.aurora.models.item.Item;
+import com.aurora.consts.ConstNpc;
+import com.aurora.consts.ConstPlayer;
+import com.aurora.models.item.Item.ItemOption;
+import com.aurora.models.map.Zone;
+import com.aurora.services.NpcService;
+import com.aurora.models.player.Inventory;
+import com.aurora.models.player.Player;
+import com.aurora.services.Service;
+import com.aurora.utils.Util;
+import com.aurora.network.io.Message;
+import com.aurora.services.ItemService;
+import com.aurora.services.PlayerService;
+import com.aurora.services.InventoryServiceNew;
+import com.aurora.utils.Logger;
 import java.util.List;
 
 /**

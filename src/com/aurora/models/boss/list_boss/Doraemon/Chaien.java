@@ -1,15 +1,15 @@
-package com.girlkun.models.boss.list_boss.Doraemon;
+package com.aurora.models.boss.list_boss.Doraemon;
 
-import com.girlkun.consts.ConstPlayer;
-import com.girlkun.models.boss.Boss;
-import com.girlkun.models.boss.BossID;
-import com.girlkun.models.boss.BossStatus;
-import com.girlkun.models.boss.BossesData;
-import com.girlkun.models.map.ItemMap;
-import com.girlkun.models.player.Player;
-import com.girlkun.services.Service;
-import com.girlkun.services.TaskService;
-import com.girlkun.utils.Util;
+import com.aurora.consts.ConstPlayer;
+import com.aurora.models.boss.Boss;
+import com.aurora.models.boss.BossID;
+import com.aurora.models.boss.BossStatus;
+import com.aurora.models.boss.BossesData;
+import com.aurora.models.map.ItemMap;
+import com.aurora.models.player.Player;
+import com.aurora.services.Service;
+import com.aurora.services.TaskService;
+import com.aurora.utils.Util;
 import java.util.Random;
 
 /**
@@ -22,6 +22,7 @@ public class Chaien extends Boss {
     public Chaien() throws Exception {
         super(BossID.CHAIEN, BossesData.CHAIEN);
     }
+
     @Override
     public void reward(Player plKill) {
         int[] itemDos = new int[]{555, 557, 559, 556, 558, 560, 562, 564, 566, 563, 565, 567};
@@ -40,10 +41,10 @@ public class Chaien extends Boss {
         TaskService.gI().checkDoneTaskKillBoss(plKill, this);
     }
 
-   @Override
+    @Override
     public void active() {
         super.active(); //To change body of generated methods, choose Tools | Templates.
-        if(Util.canDoWithTime(st,900000)){
+        if (Util.canDoWithTime(st, 900000)) {
             this.changeStatus(BossStatus.LEAVE_MAP);
         }
     }
@@ -51,7 +52,7 @@ public class Chaien extends Boss {
     @Override
     public void joinMap() {
         super.joinMap(); //To change body of generated methods, choose Tools | Templates.
-        st= System.currentTimeMillis();
+        st = System.currentTimeMillis();
     }
     private long st;
 
@@ -66,7 +67,7 @@ public class Chaien extends Boss {
                 return;
             }
         }
-        
+
     }
 }
 

@@ -1,17 +1,17 @@
-package com.girlkun.models.clan;
+package com.aurora.models.clan;
 
 import com.girlkun.database.GirlkunDB;
-import com.girlkun.models.map.doanhtrai.DoanhTrai;
-import com.girlkun.services.ClanService;
+import com.aurora.models.map.doanhtrai.DoanhTrai;
+import com.aurora.services.ClanService;
 import java.util.ArrayList;
 import java.util.List;
-import com.girlkun.models.player.Player;
-import com.girlkun.server.Client;
-import com.girlkun.server.Manager;
-import com.girlkun.services.Service;
-import com.girlkun.network.io.Message;
-import com.girlkun.utils.Logger;
-import com.girlkun.utils.Util;
+import com.aurora.models.player.Player;
+import com.aurora.server.Client;
+import com.aurora.server.Manager;
+import com.aurora.services.Service;
+import com.aurora.network.io.Message;
+import com.aurora.utils.Logger;
+import com.aurora.utils.Util;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import org.json.simple.JSONArray;

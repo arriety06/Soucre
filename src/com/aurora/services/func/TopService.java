@@ -1,14 +1,12 @@
-package com.girlkun.services.func;
+package com.aurora.services.func;
 
-import com.girlkun.jdbc.daos.PlayerDAO;
-import com.girlkun.models.player.Player;
-import com.girlkun.server.Client;
-import com.girlkun.server.Manager;
-import com.girlkun.network.io.Message;
-import com.girlkun.utils.Util;
+import com.aurora.models.player.Player;
+import com.aurora.server.Client;
+import com.aurora.server.Manager;
+import com.aurora.network.io.Message;
+import com.aurora.utils.Util;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.var;
 
 /**
  *
@@ -17,7 +15,7 @@ import lombok.var;
  *
  */
 public class TopService {
-    
+
     private static final String QUERY_TOP_POWER = "select player.id, player.name,"
             + "player.power, player.head, player.gender, player.have_tennis_space_ship,"
             + "player.clan_id_sv" + Manager.SERVER + ", player.data_inventory,"
@@ -47,21 +45,22 @@ public class TopService {
         }
         return i;
     }
-    public void sendTabTop(Player pl, String nameBXH){
+
+    public void sendTabTop(Player pl, String nameBXH) {
         Message msg = null;
-        try{
+        try {
             msg = new Message(-96);
             msg.writer().writeByte(0);
             msg.writer().writeUTF(nameBXH);
             msg.writer().writeByte(this.listTopPower.size());
-            for(int i = 0 ; i < this.listTopPower.size() ; i++){
-                
+            for (int i = 0; i < this.listTopPower.size(); i++) {
+
                 msg.writer().writeInt(i + 1);
-                msg.writer().writeInt((int)this.listTopPower.get(i).id);//id
+                msg.writer().writeInt((int) this.listTopPower.get(i).id);//id
                 msg.writer().writeShort(this.listTopPower.get(i).head);
                 //if(pl.session.get_version() > 214){
-               
-                    msg.writer().writeShort(-1);
+
+                msg.writer().writeShort(-1);
                 //}
                 msg.writer().writeShort(this.listTopPower.get(i).getBody());
                 msg.writer().writeShort(this.listTopPower.get(i).getLeg());
@@ -70,12 +69,13 @@ public class TopService {
                 msg.writer().writeUTF("NULL");
             }
             pl.sendMessage(msg);
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     public void showTopPower(Player player) {
-        if(true){
+        if (true) {
             return;
         }
         if (Util.canDoWithTime(lastTimeGetTopPower, TIME_TARGET_GET_TOP_POWER)) {
@@ -91,7 +91,7 @@ public class TopService {
             msg.writer().writeByte(this.listTopPower.size());
             for (int i = 0; i < this.listTopPower.size(); i++) {
                 Player pl = this.listTopPower.get(i);
-                msg.writer().writeInt(i+1);
+                msg.writer().writeInt(i + 1);
                 msg.writer().writeInt((int) pl.id);
                 msg.writer().writeShort(pl.getHead());
                 msg.writer().writeShort(pl.getBody());

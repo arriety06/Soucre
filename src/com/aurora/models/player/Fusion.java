@@ -1,7 +1,7 @@
-package com.girlkun.models.player;
+package com.aurora.models.player;
 
-import com.girlkun.consts.ConstPlayer;
-import com.girlkun.utils.Util;
+import com.aurora.consts.ConstPlayer;
+import com.aurora.utils.Util;
 
 /**
  *

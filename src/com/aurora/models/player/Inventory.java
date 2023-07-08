@@ -1,8 +1,8 @@
-package com.girlkun.models.player;
+package com.aurora.models.player;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.girlkun.models.item.Item;
+import com.aurora.models.item.Item;
 
 /**
  *

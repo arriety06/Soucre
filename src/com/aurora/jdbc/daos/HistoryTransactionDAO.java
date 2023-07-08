@@ -1,16 +1,10 @@
-package com.girlkun.jdbc.daos;
+package com.aurora.jdbc.daos;
 
 import com.girlkun.database.GirlkunDB;
-import com.girlkun.models.item.Item;
-import com.girlkun.models.player.Player;
-import com.girlkun.utils.Logger;
-import com.girlkun.utils.TimeUtil;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import com.aurora.models.item.Item;
+import com.aurora.models.player.Player;
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.logging.Level;
 
 /**
  *

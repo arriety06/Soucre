@@ -1,7 +1,7 @@
-package com.girlkun.models.reward;
+package com.aurora.models.reward;
 
-import com.girlkun.models.Template;
-import com.girlkun.server.Manager;
+import com.aurora.models.Template;
+import com.aurora.server.Manager;
 import lombok.Data;
 
 /**

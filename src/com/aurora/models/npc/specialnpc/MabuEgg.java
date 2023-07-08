@@ -1,12 +1,12 @@
-package com.girlkun.models.npc.specialnpc;
+package com.aurora.models.npc.specialnpc;
 
-import com.girlkun.services.func.ChangeMapService;
-import com.girlkun.services.PetService;
-import com.girlkun.models.player.Player;
-import com.girlkun.utils.Util;
-import com.girlkun.network.io.Message;
-import com.girlkun.services.Service;
-import com.girlkun.utils.Logger;
+import com.aurora.services.func.ChangeMapService;
+import com.aurora.services.PetService;
+import com.aurora.models.player.Player;
+import com.aurora.utils.Util;
+import com.aurora.network.io.Message;
+import com.aurora.services.Service;
+import com.aurora.utils.Logger;
 
 /**
  *

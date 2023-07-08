@@ -1,4 +1,4 @@
-package com.girlkun.utils;
+package com.aurora.utils;
 
 import java.util.Random;
 

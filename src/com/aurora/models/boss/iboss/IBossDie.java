@@ -1,6 +1,6 @@
-package com.girlkun.models.boss.iboss;
+package com.aurora.models.boss.iboss;
 
-import com.girlkun.models.player.Player;
+import com.aurora.models.player.Player;
 
 /**
  *

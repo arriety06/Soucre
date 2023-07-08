@@ -1,10 +1,10 @@
-package com.girlkun.services.func;
+package com.aurora.services.func;
 
-import com.girlkun.models.item.Item;
-import com.girlkun.models.player.Player;
-import com.girlkun.network.io.Message;
-import com.girlkun.services.RewardService;
-import com.girlkun.services.Service;
+import com.aurora.models.item.Item;
+import com.aurora.models.player.Player;
+import com.aurora.network.io.Message;
+import com.aurora.services.RewardService;
+import com.aurora.services.Service;
 import java.util.List;
 
 /**

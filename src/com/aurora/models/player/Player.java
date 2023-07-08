@@ -1,36 +1,36 @@
-package com.girlkun.models.player;
+package com.aurora.models.player;
 
-import com.girlkun.models.skill.PlayerSkill;
+import com.aurora.models.skill.PlayerSkill;
 import java.util.List;
-import com.girlkun.models.clan.Clan;
-import com.girlkun.models.intrinsic.IntrinsicPlayer;
-import com.girlkun.models.item.Item;
-import com.girlkun.models.item.ItemTime;
-import com.girlkun.models.npc.specialnpc.MagicTree;
-import com.girlkun.consts.ConstPlayer;
-import com.girlkun.consts.ConstTask;
-import com.girlkun.models.npc.specialnpc.MabuEgg;
-import com.girlkun.models.mob.MobMe;
-import com.girlkun.data.DataGame;
-import com.girlkun.models.clan.ClanMember;
-import com.girlkun.models.map.TrapMap;
-import com.girlkun.models.map.Zone;
-import com.girlkun.models.map.blackball.BlackBallWar;
-import com.girlkun.models.matches.IPVP;
-import com.girlkun.models.matches.TYPE_LOSE_PVP;
-import com.girlkun.models.skill.Skill;
-import com.girlkun.services.Service;
-import com.girlkun.server.io.MySession;
-import com.girlkun.models.task.TaskPlayer;
-import com.girlkun.network.io.Message;
-import com.girlkun.server.Client;
-import com.girlkun.services.EffectSkillService;
-import com.girlkun.services.FriendAndEnemyService;
-import com.girlkun.services.TaskService;
-import com.girlkun.services.func.ChangeMapService;
-import com.girlkun.services.func.CombineNew;
-import com.girlkun.utils.Logger;
-import com.girlkun.utils.Util;
+import com.aurora.models.clan.Clan;
+import com.aurora.models.intrinsic.IntrinsicPlayer;
+import com.aurora.models.item.Item;
+import com.aurora.models.item.ItemTime;
+import com.aurora.models.npc.specialnpc.MagicTree;
+import com.aurora.consts.ConstPlayer;
+import com.aurora.consts.ConstTask;
+import com.aurora.models.npc.specialnpc.MabuEgg;
+import com.aurora.models.mob.MobMe;
+import com.aurora.data.DataGame;
+import com.aurora.models.clan.ClanMember;
+import com.aurora.models.map.TrapMap;
+import com.aurora.models.map.Zone;
+import com.aurora.models.map.blackball.BlackBallWar;
+import com.aurora.models.matches.IPVP;
+import com.aurora.models.matches.TYPE_LOSE_PVP;
+import com.aurora.models.skill.Skill;
+import com.aurora.services.Service;
+import com.aurora.server.io.MySession;
+import com.aurora.models.task.TaskPlayer;
+import com.aurora.network.io.Message;
+import com.aurora.server.Client;
+import com.aurora.services.EffectSkillService;
+import com.aurora.services.FriendAndEnemyService;
+import com.aurora.services.TaskService;
+import com.aurora.services.func.ChangeMapService;
+import com.aurora.services.func.CombineNew;
+import com.aurora.utils.Logger;
+import com.aurora.utils.Util;
 import java.util.ArrayList;
 
 /**
@@ -193,6 +193,7 @@ public class Player {
                     }
                 }
             } catch (Exception e) {
+                e.printStackTrace();
                 Logger.logException(Player.class, e, "Lỗi tại player: " + this.name);
             }
         }
@@ -335,26 +336,6 @@ public class Player {
                 return (short) DataGame.MAP_MOUNT_NUM.get(String.valueOf(item.template.id));
             }
         }
-
-//        for (Item item : inventory.itemsBag) {
-//            if (item.isNotNullItem()) {
-//                if (item.template.type == 24) {
-//                    if (item.template.gender == 3 || item.template.gender == this.gender) {
-//                        return item.template.id;
-//                    } else {
-//                        return -1;
-//                    }
-//                }
-//                if (item.template.type == 23) {
-//                    if (item.template.id < 500) {
-//                        return item.template.id;
-//                    } else {
-//                        return (short) DataGame.MAP_MOUNT_NUM.get(String.valueOf(item.template.id));
-//                    }
-//                }
-//            }
-//        }
-//        return -1;
     }
 
     //--------------------------------------------------------------------------
@@ -366,7 +347,7 @@ public class Player {
                     case Skill.MASENKO:
                     case Skill.ANTOMIC:
                         if (this.nPoint.voHieuChuong > 0) {
-                            com.girlkun.services.PlayerService.gI().hoiPhuc(this, 0, damage * this.nPoint.voHieuChuong / 100);
+                            com.aurora.services.PlayerService.gI().hoiPhuc(this, 0, damage * this.nPoint.voHieuChuong / 100);
                             return 0;
                         }
                 }
@@ -387,8 +368,9 @@ public class Player {
             this.nPoint.subHP(damage);
             if (isDie()) {
                 setDie(plAtt);
-                if (plAtt.zone.map.mapId == 129)
-                plAtt.pointPvp++;
+                if (plAtt.zone.map.mapId == 129) {
+                    plAtt.pointPvp++;
+                }
             }
             return damage;
         } else {

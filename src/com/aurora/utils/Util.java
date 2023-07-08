@@ -1,16 +1,16 @@
-package com.girlkun.utils;
+package com.aurora.utils;
 
-import com.girlkun.models.item.Item;
-import com.girlkun.models.map.ItemMap;
-import com.girlkun.models.map.Zone;
+import com.aurora.models.item.Item;
+import com.aurora.models.map.ItemMap;
+import com.aurora.models.map.Zone;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Random;
 import java.util.Arrays;
-import com.girlkun.models.mob.Mob;
-import com.girlkun.models.npc.Npc;
-import com.girlkun.models.player.Player;
-import com.girlkun.services.ItemService;
+import com.aurora.models.mob.Mob;
+import com.aurora.models.npc.Npc;
+import com.aurora.models.player.Player;
+import com.aurora.services.ItemService;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -232,7 +232,7 @@ public class Util {
         double highlightsNumber = 1.1;
         return highlights ? (int) (value * highlightsNumber) : value;
     }
-    
+
     public static Item sendDo(int itemId, int sql, List<Item.ItemOption> ios) {
 //        InventoryServiceNew.gI().addItemBag(player, ItemService.gI().createItemFromItemShop(is));
 //        InventoryServiceNew.gI().sendItemBags(player);

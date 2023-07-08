@@ -1,9 +1,9 @@
-package com.girlkun.data;
+package com.aurora.data;
 
-import com.girlkun.models.Template.ItemOptionTemplate;
-import com.girlkun.server.Manager;
-import com.girlkun.network.io.Message;
-import com.girlkun.server.io.MySession;
+import com.aurora.models.Template.ItemOptionTemplate;
+import com.aurora.server.Manager;
+import com.aurora.network.io.Message;
+import com.aurora.server.io.MySession;
 
 /**
  *

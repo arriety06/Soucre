@@ -1,11 +1,11 @@
-package com.girlkun.utils;
+package com.aurora.utils;
 
 import java.util.List;
-import com.girlkun.models.player.Player;
-import com.girlkun.models.skill.NClass;
-import com.girlkun.models.skill.Skill;
-import com.girlkun.models.Template.SkillTemplate;
-import com.girlkun.server.Manager;
+import com.aurora.models.player.Player;
+import com.aurora.models.skill.NClass;
+import com.aurora.models.skill.Skill;
+import com.aurora.models.Template.SkillTemplate;
+import com.aurora.server.Manager;
 
 /**
  *

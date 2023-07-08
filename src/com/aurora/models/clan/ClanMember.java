@@ -1,7 +1,7 @@
-package com.girlkun.models.clan;
+package com.aurora.models.clan;
 
-import com.girlkun.models.player.Player;
-import com.girlkun.utils.TimeUtil;
+import com.aurora.models.player.Player;
+import com.aurora.utils.TimeUtil;
 import java.util.Date;
 
 /**

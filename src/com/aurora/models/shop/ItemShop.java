@@ -1,7 +1,7 @@
-package com.girlkun.models.shop;
+package com.aurora.models.shop;
 
-import com.girlkun.models.Template;
-import com.girlkun.models.item.Item;
+import com.aurora.models.Template;
+import com.aurora.models.item.Item;
 import java.util.ArrayList;
 import java.util.List;
 

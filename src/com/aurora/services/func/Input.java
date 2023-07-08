@@ -1,18 +1,18 @@
-package com.girlkun.services.func;
+package com.aurora.services.func;
 
 import com.girlkun.database.GirlkunDB;
-import com.girlkun.consts.ConstNpc;
-import com.girlkun.models.map.Zone;
-import com.girlkun.models.npc.Npc;
-import com.girlkun.models.npc.NpcManager;
-import com.girlkun.models.player.Player;
-import com.girlkun.network.io.Message;
-import com.girlkun.network.session.ISession;
-import com.girlkun.server.Client;
-import com.girlkun.services.Service;
-import com.girlkun.services.GiftService;
-import com.girlkun.services.NapThe;
-import com.girlkun.services.NpcService;
+import com.aurora.consts.ConstNpc;
+import com.aurora.models.map.Zone;
+import com.aurora.models.npc.Npc;
+import com.aurora.models.npc.NpcManager;
+import com.aurora.models.player.Player;
+import com.aurora.network.io.Message;
+import com.aurora.network.session.ISession;
+import com.aurora.server.Client;
+import com.aurora.services.Service;
+import com.aurora.services.GiftService;
+import com.aurora.services.NapThe;
+import com.aurora.services.NpcService;
 import java.util.HashMap;
 import java.util.Map;
 

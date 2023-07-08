@@ -1,8 +1,8 @@
-package com.girlkun.models.player;
+package com.aurora.models.player;
 
-import com.girlkun.consts.ConstNpc;
-import com.girlkun.models.npc.Npc;
-import com.girlkun.models.shop.Shop;
+import com.aurora.consts.ConstNpc;
+import com.aurora.models.npc.Npc;
+import com.aurora.models.shop.Shop;
 import lombok.Data;
 
 /**

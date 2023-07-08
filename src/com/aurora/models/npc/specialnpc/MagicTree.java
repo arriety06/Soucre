@@ -1,16 +1,16 @@
-package com.girlkun.models.npc.specialnpc;
+package com.aurora.models.npc.specialnpc;
 
-import com.girlkun.consts.ConstNpc;
-import com.girlkun.models.item.Item;
-import com.girlkun.models.npc.NpcManager;
-import com.girlkun.models.player.Player;
-import com.girlkun.services.Service;
-import com.girlkun.utils.Util;
-import com.girlkun.network.io.Message;
-import com.girlkun.services.ItemService;
-import com.girlkun.services.PlayerService;
-import com.girlkun.services.InventoryServiceNew;
-import com.girlkun.utils.Logger;
+import com.aurora.consts.ConstNpc;
+import com.aurora.models.item.Item;
+import com.aurora.models.npc.NpcManager;
+import com.aurora.models.player.Player;
+import com.aurora.services.Service;
+import com.aurora.utils.Util;
+import com.aurora.network.io.Message;
+import com.aurora.services.ItemService;
+import com.aurora.services.PlayerService;
+import com.aurora.services.InventoryServiceNew;
+import com.aurora.utils.Logger;
 
 /**
  *

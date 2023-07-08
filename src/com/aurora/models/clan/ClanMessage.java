@@ -1,4 +1,4 @@
-package com.girlkun.models.clan;
+package com.aurora.models.clan;
 
 /**
  *

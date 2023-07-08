@@ -3,33 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.girlkun.models.boss.list_boss;
+package com.aurora.models.boss.list_boss;
 
-import com.girlkun.models.boss.Boss;
-import com.girlkun.models.boss.BossID;
-import com.girlkun.models.boss.BossStatus;
-import com.girlkun.models.boss.BossesData;
-import com.girlkun.models.map.ItemMap;
-import com.girlkun.models.player.Player;
-import com.girlkun.services.Service;
-import com.girlkun.utils.Util;
-import com.sun.corba.se.spi.logging.CORBALogDomains;
-
+import com.aurora.models.boss.Boss;
+import com.aurora.models.boss.BossID;
+import com.aurora.models.boss.BossesData;
+import com.aurora.models.map.ItemMap;
+import com.aurora.models.player.Player;
+import com.aurora.services.Service;
+import com.aurora.utils.Util;
 
 /**
  *
  * @author Administrator
  */
-public class Mabu extends Boss{
-   public Mabu() throws Exception {
+public class Mabu extends Boss {
+
+    public Mabu() throws Exception {
         super(BossID.MABU, BossesData.MABU);
     }
-     @Override
+
+    @Override
     public void reward(Player plKill) {
         if (Util.isTrue(100, 100)) {
             ItemMap it = new ItemMap(this.zone, 568, 1, this.location.x, this.zone.map.yPhysicInTop(this.location.x,
                     this.location.y - 24), plKill.id);
-        Service.getInstance().dropItemMap(this.zone, it);
+            Service.getInstance().dropItemMap(this.zone, it);
         }
     }
 
@@ -47,5 +46,4 @@ public class Mabu extends Boss{
 //        st= System.currentTimeMillis();
 //    }
 //    private long st;
-   
 }

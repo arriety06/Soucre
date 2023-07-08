@@ -1,4 +1,4 @@
-package com.girlkun.models.reward;
+package com.aurora.models.reward;
 
 import java.util.ArrayList;
 import java.util.List;

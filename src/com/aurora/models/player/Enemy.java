@@ -1,4 +1,4 @@
-package com.girlkun.models.player;
+package com.aurora.models.player;
 
 /**
  *

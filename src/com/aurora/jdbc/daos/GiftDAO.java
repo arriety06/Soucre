@@ -1,7 +1,7 @@
-package com.girlkun.jdbc.daos;
+package com.aurora.jdbc.daos;
 
-import com.girlkun.models.player.Player;
-import com.girlkun.utils.Logger;
+import com.aurora.models.player.Player;
+import com.aurora.utils.Logger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

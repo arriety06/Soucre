@@ -1,11 +1,11 @@
-package com.girlkun.jdbc.daos;
+package com.aurora.jdbc.daos;
 
-import com.girlkun.models.item.Item;
-import com.girlkun.models.shop.ItemShop;
-import com.girlkun.models.shop.Shop;
-import com.girlkun.models.shop.TabShop;
-import com.girlkun.services.ItemService;
-import com.girlkun.utils.Logger;
+import com.aurora.models.item.Item;
+import com.aurora.models.shop.ItemShop;
+import com.aurora.models.shop.Shop;
+import com.aurora.models.shop.TabShop;
+import com.aurora.services.ItemService;
+import com.aurora.utils.Logger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,8 +1,8 @@
-package com.girlkun.models.player;
+package com.aurora.models.player;
 
-import com.girlkun.services.Service;
-import com.girlkun.utils.TimeUtil;
-import com.girlkun.utils.Util;
+import com.aurora.services.Service;
+import com.aurora.utils.TimeUtil;
+import com.aurora.utils.Util;
 import java.util.Date;
 
 /**

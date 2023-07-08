@@ -1,16 +1,16 @@
-package com.girlkun.jdbc.daos;
+package com.aurora.jdbc.daos;
 
 import com.girlkun.database.GirlkunDB;
-import com.girlkun.models.item.Item;
-import com.girlkun.models.item.ItemTime;
-import com.girlkun.models.player.Friend;
-import com.girlkun.models.player.Fusion;
-import com.girlkun.models.player.Inventory;
-import com.girlkun.models.player.Player;
-import com.girlkun.models.skill.Skill;
-import com.girlkun.server.Manager;
-import com.girlkun.services.MapService;
-import com.girlkun.utils.Logger;
+import com.aurora.models.item.Item;
+import com.aurora.models.item.ItemTime;
+import com.aurora.models.player.Friend;
+import com.aurora.models.player.Fusion;
+import com.aurora.models.player.Inventory;
+import com.aurora.models.player.Player;
+import com.aurora.models.skill.Skill;
+import com.aurora.server.Manager;
+import com.aurora.services.MapService;
+import com.aurora.utils.Logger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

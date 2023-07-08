@@ -1,17 +1,15 @@
-package com.girlkun.models.map.blackball;
+package com.aurora.models.map.blackball;
 
-import com.girlkun.models.item.Item;
-import com.girlkun.models.map.ItemMap;
-import com.girlkun.models.map.Map;
-import com.girlkun.models.player.Player;
-import com.girlkun.services.MapService;
-import com.girlkun.services.PlayerService;
-import com.girlkun.services.Service;
-import com.girlkun.services.func.ChangeMapService;
-import com.girlkun.utils.Logger;
-import com.girlkun.utils.TimeUtil;
-import com.girlkun.utils.Util;
-import java.util.ArrayList;
+import com.aurora.models.item.Item;
+import com.aurora.models.map.ItemMap;
+import com.aurora.models.player.Player;
+import com.aurora.services.MapService;
+import com.aurora.services.PlayerService;
+import com.aurora.services.Service;
+import com.aurora.services.func.ChangeMapService;
+import com.aurora.utils.Logger;
+import com.aurora.utils.TimeUtil;
+import com.aurora.utils.Util;
 import java.util.Date;
 import java.util.List;
 
@@ -44,7 +42,6 @@ public class BlackBallWar {
 //    public static final byte HOUR_CLOSE = 21;
 //    public static final byte MIN_CLOSE = 0;
 //    public static final byte SECOND_CLOSE = 0;
-
     public static final byte HOUR_OPEN = 20;
     public static final byte MIN_OPEN = 0;
     public static final byte SECOND_OPEN = 0;
@@ -56,9 +53,8 @@ public class BlackBallWar {
     public static final byte HOUR_CLOSE = 21;
     public static final byte MIN_CLOSE = 0;
     public static final byte SECOND_CLOSE = 0;
-    
+
     //*************************************
-    
     public static final int AVAILABLE = 7;
     private static final int TIME_WIN = 300000;
 

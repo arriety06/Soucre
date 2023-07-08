@@ -1,10 +1,10 @@
-package com.girlkun.models.skill;
+package com.aurora.models.skill;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.girlkun.models.player.Player;
-import com.girlkun.services.Service;
-import com.girlkun.network.io.Message;
+import com.aurora.models.player.Player;
+import com.aurora.services.Service;
+import com.aurora.network.io.Message;
 
 /**
  *

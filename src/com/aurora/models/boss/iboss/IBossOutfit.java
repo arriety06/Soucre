@@ -1,4 +1,4 @@
-package com.girlkun.models.boss.iboss;
+package com.aurora.models.boss.iboss;
 
 /**
  *

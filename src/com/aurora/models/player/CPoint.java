@@ -1,3 +1,5 @@
+package com.aurora.models.player;
+
 //package com.girlkun.models.player;
 //
 ///**

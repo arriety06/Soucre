@@ -1,9 +1,9 @@
-package com.girlkun.models.skill;
+package com.aurora.models.skill;
 
-import com.girlkun.models.Template.SkillTemplate;
+import com.aurora.models.Template.SkillTemplate;
 import java.util.ArrayList;
 import java.util.List;
-import com.girlkun.utils.Util;
+import com.aurora.utils.Util;
 
 /**
  *

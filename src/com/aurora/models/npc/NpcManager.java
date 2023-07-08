@@ -1,10 +1,10 @@
-package com.girlkun.models.npc;
+package com.aurora.models.npc;
 
-import com.girlkun.consts.ConstNpc;
-import com.girlkun.consts.ConstTask;
-import com.girlkun.models.player.Player;
-import com.girlkun.server.Manager;
-import com.girlkun.services.TaskService;
+import com.aurora.consts.ConstNpc;
+import com.aurora.consts.ConstTask;
+import com.aurora.models.player.Player;
+import com.aurora.server.Manager;
+import com.aurora.services.TaskService;
 import java.util.ArrayList;
 import java.util.List;
 

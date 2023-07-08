@@ -1,22 +1,21 @@
-package com.girlkun.models.boss;
+package com.aurora.models.boss;
 
-import com.girlkun.consts.ConstPlayer;
-import com.girlkun.models.boss.iboss.IBossNew;
-import com.girlkun.models.boss.iboss.IBossOutfit;
-import com.girlkun.models.map.ItemMap;
-import com.girlkun.models.map.Zone;
-import com.girlkun.models.player.Player;
-import com.girlkun.models.skill.Skill;
-import com.girlkun.server.ServerNotify;
-import com.girlkun.services.EffectSkillService;
-import com.girlkun.services.MapService;
-import com.girlkun.services.PlayerService;
-import com.girlkun.services.Service;
-import com.girlkun.services.SkillService;
-import com.girlkun.services.TaskService;
-import com.girlkun.services.func.ChangeMapService;
-import com.girlkun.utils.SkillUtil;
-import com.girlkun.utils.Util;
+import com.aurora.consts.ConstPlayer;
+import com.aurora.models.boss.iboss.IBossNew;
+import com.aurora.models.boss.iboss.IBossOutfit;
+import com.aurora.models.map.Zone;
+import com.aurora.models.player.Player;
+import com.aurora.models.skill.Skill;
+import com.aurora.server.ServerNotify;
+import com.aurora.services.EffectSkillService;
+import com.aurora.services.MapService;
+import com.aurora.services.PlayerService;
+import com.aurora.services.Service;
+import com.aurora.services.SkillService;
+import com.aurora.services.TaskService;
+import com.aurora.services.func.ChangeMapService;
+import com.aurora.utils.SkillUtil;
+import com.aurora.utils.Util;
 
 /**
  *

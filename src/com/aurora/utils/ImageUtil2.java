@@ -1,4 +1,4 @@
-package com.girlkun.utils;
+package com.aurora.utils;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;

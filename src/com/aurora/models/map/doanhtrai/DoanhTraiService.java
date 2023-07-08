@@ -1,9 +1,9 @@
-package com.girlkun.models.map.doanhtrai;
+package com.aurora.models.map.doanhtrai;
 
-import com.girlkun.models.map.Zone;
-import com.girlkun.models.player.Player;
-import com.girlkun.services.Service;
-import com.girlkun.services.func.ChangeMapService;
+import com.aurora.models.map.Zone;
+import com.aurora.models.player.Player;
+import com.aurora.services.Service;
+import com.aurora.services.func.ChangeMapService;
 import java.util.ArrayList;
 import java.util.List;
 

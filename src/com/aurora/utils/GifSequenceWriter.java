@@ -1,4 +1,4 @@
-package com.girlkun.utils;
+package com.aurora.utils;
 
 import javax.imageio.*;
 import javax.imageio.metadata.*;

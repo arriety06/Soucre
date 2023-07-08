@@ -1,9 +1,8 @@
-package com.girlkun.models.boss;
+package com.aurora.models.boss;
 
-import com.girlkun.consts.ConstPlayer;
-import com.girlkun.models.skill.Skill;
-import com.girlkun.utils.Util;
-import com.girlkun.models.boss.BossID;
+import com.aurora.consts.ConstPlayer;
+import com.aurora.models.skill.Skill;
+import com.aurora.utils.Util;
 
 /**
  *

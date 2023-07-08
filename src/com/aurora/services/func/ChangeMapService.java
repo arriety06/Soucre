@@ -1,24 +1,24 @@
-package com.girlkun.services.func;
+package com.aurora.services.func;
 
-import com.girlkun.consts.ConstMap;
-import com.girlkun.consts.ConstPlayer;
-import com.girlkun.consts.ConstTask;
-import com.girlkun.models.map.Map;
-import com.girlkun.models.map.WayPoint;
-import com.girlkun.models.map.Zone;
-import com.girlkun.models.map.blackball.BlackBallWar;
-import com.girlkun.services.MapService;
-import com.girlkun.models.mob.Mob;
-import com.girlkun.models.player.Player;
-import com.girlkun.models.matches.TYPE_LOSE_PVP;
-import com.girlkun.services.Service;
-import com.girlkun.utils.Util;
-import com.girlkun.network.io.Message;
-import com.girlkun.services.EffectSkillService;
-import com.girlkun.services.PlayerService;
-import com.girlkun.services.TaskService;
-import com.girlkun.utils.Logger;
-import com.girlkun.utils.TimeUtil;
+import com.aurora.consts.ConstMap;
+import com.aurora.consts.ConstPlayer;
+import com.aurora.consts.ConstTask;
+import com.aurora.models.map.Map;
+import com.aurora.models.map.WayPoint;
+import com.aurora.models.map.Zone;
+import com.aurora.models.map.blackball.BlackBallWar;
+import com.aurora.services.MapService;
+import com.aurora.models.mob.Mob;
+import com.aurora.models.player.Player;
+import com.aurora.models.matches.TYPE_LOSE_PVP;
+import com.aurora.services.Service;
+import com.aurora.utils.Util;
+import com.aurora.network.io.Message;
+import com.aurora.services.EffectSkillService;
+import com.aurora.services.PlayerService;
+import com.aurora.services.TaskService;
+import com.aurora.utils.Logger;
+import com.aurora.utils.TimeUtil;
 import java.util.List;
 
 /**
@@ -576,7 +576,7 @@ public class ChangeMapService {
             if (player.effectSkill.useTroi) {
                 EffectSkillService.gI().removeUseTroi(player);
             }
-            if(player.effectSkin.xHPKI > 1){
+            if (player.effectSkin.xHPKI > 1) {
                 player.effectSkin.xHPKI = 1;
                 Service.getInstance().point(player);
             }

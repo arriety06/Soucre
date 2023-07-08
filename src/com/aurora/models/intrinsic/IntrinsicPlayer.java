@@ -1,6 +1,6 @@
-package com.girlkun.models.intrinsic;
+package com.aurora.models.intrinsic;
 
-import com.girlkun.services.IntrinsicService;
+import com.aurora.services.IntrinsicService;
 
 /**
  *

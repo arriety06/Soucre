@@ -1,20 +1,20 @@
-package com.girlkun.models.player;
+package com.aurora.models.player;
 
-import com.girlkun.consts.ConstPlayer;
-import com.girlkun.consts.ConstRatio;
-import com.girlkun.models.intrinsic.Intrinsic;
-import com.girlkun.models.item.Item;
-import com.girlkun.models.skill.Skill;
-import com.girlkun.server.Manager;
-import com.girlkun.services.EffectSkillService;
-import com.girlkun.services.ItemService;
-import com.girlkun.services.MapService;
-import com.girlkun.services.PlayerService;
-import com.girlkun.services.Service;
-import com.girlkun.services.TaskService;
-import com.girlkun.utils.Logger;
-import com.girlkun.utils.SkillUtil;
-import com.girlkun.utils.Util;
+import com.aurora.consts.ConstPlayer;
+import com.aurora.consts.ConstRatio;
+import com.aurora.models.intrinsic.Intrinsic;
+import com.aurora.models.item.Item;
+import com.aurora.models.skill.Skill;
+import com.aurora.server.Manager;
+import com.aurora.services.EffectSkillService;
+import com.aurora.services.ItemService;
+import com.aurora.services.MapService;
+import com.aurora.services.PlayerService;
+import com.aurora.services.Service;
+import com.aurora.services.TaskService;
+import com.aurora.utils.Logger;
+import com.aurora.utils.SkillUtil;
+import com.aurora.utils.Util;
 import java.util.ArrayList;
 import java.util.List;
 

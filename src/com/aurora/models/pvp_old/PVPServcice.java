@@ -1,3 +1,5 @@
+package com.aurora.models.pvp_old;
+
 //package com.girlkun.models.pvp_old;
 //
 //import com.girlkun.consts.ConstNpc;

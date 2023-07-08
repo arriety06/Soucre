@@ -1,10 +1,10 @@
-package com.girlkun.models.map.doanhtrai;
+package com.aurora.models.map.doanhtrai;
 
-import com.girlkun.models.clan.Clan;
-import com.girlkun.models.map.Zone;
-import com.girlkun.models.mob.Mob;
-import com.girlkun.models.player.Player;
-import com.girlkun.services.func.ChangeMapService;
+import com.aurora.models.clan.Clan;
+import com.aurora.models.map.Zone;
+import com.aurora.models.mob.Mob;
+import com.aurora.models.player.Player;
+import com.aurora.services.func.ChangeMapService;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Data;

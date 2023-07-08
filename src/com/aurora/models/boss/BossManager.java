@@ -1,38 +1,40 @@
-package com.girlkun.models.boss;
-import com.girlkun.models.boss.list_boss.Bubbles;
-import com.girlkun.models.boss.list_boss.AnTrom;
-//import com.girlkun.models.boss.list_boss.Cadic;
-import com.girlkun.models.boss.list_boss.BLACK.Black;
-import com.girlkun.models.boss.list_boss.NgucTu.CoolerGold;
-import com.girlkun.models.boss.list_boss.Doraemon.Doraemon;
-import com.girlkun.models.boss.list_boss.FideBack.Kingcold;
-import com.girlkun.models.boss.list_boss.Mabu;
-import com.girlkun.models.boss.list_boss.NgucTu.Cumber;
-import com.girlkun.models.boss.list_boss.cell.Xencon;
-import com.girlkun.models.boss.list_boss.ginyu.So1;
-import com.girlkun.models.boss.list_boss.ginyu.TieuDoiTruong;
-import com.girlkun.models.boss.list_boss.ginyu.So4;
-import com.girlkun.models.boss.list_boss.ginyu.So2;
-import com.girlkun.models.boss.list_boss.ginyu.So3;
-import com.girlkun.models.boss.list_boss.android.*;
-import com.girlkun.models.boss.list_boss.cell.SieuBoHung;
-import com.girlkun.models.boss.list_boss.cell.XenBoHung;
-import com.girlkun.models.boss.list_boss.doanh_trai.TrungUyTrang;
-import com.girlkun.models.boss.list_boss.Broly.Broly;
-import com.girlkun.models.boss.list_boss.Doraemon.Nobita;
-import com.girlkun.models.boss.list_boss.Doraemon.Xeko;
-import com.girlkun.models.boss.list_boss.Doraemon.Xuka;
-import com.girlkun.models.boss.list_boss.FideBack.FideRobot;
-import com.girlkun.models.boss.list_boss.NgucTu.SongokuTaAc;
-import com.girlkun.models.boss.list_boss.fide.Fide;
-import com.girlkun.models.boss.list_boss.Doraemon.Chaien;
-import com.girlkun.models.boss.list_boss.nappa.*;
-import com.girlkun.server.ServerManager;
-import com.sun.javafx.tk.RenderJob;
+package com.aurora.models.boss;
+
+import com.aurora.models.boss.list_boss.nappa.Rambo;
+import com.aurora.models.boss.list_boss.nappa.MapDauDinh;
+import com.aurora.models.boss.list_boss.nappa.Kuku;
+import com.aurora.models.boss.list_boss.Bubbles;
+import com.aurora.models.boss.list_boss.AnTrom;
+//import com.aurora.models.boss.list_boss.Cadic;
+import com.aurora.models.boss.list_boss.BLACK.Black;
+import com.aurora.models.boss.list_boss.NgucTu.CoolerGold;
+import com.aurora.models.boss.list_boss.Doraemon.Doraemon;
+import com.aurora.models.boss.list_boss.FideBack.Kingcold;
+import com.aurora.models.boss.list_boss.Mabu;
+import com.aurora.models.boss.list_boss.NgucTu.Cumber;
+import com.aurora.models.boss.list_boss.cell.Xencon;
+import com.aurora.models.boss.list_boss.ginyu.So1;
+import com.aurora.models.boss.list_boss.ginyu.TieuDoiTruong;
+import com.aurora.models.boss.list_boss.ginyu.So4;
+import com.aurora.models.boss.list_boss.ginyu.So2;
+import com.aurora.models.boss.list_boss.ginyu.So3;
+import com.aurora.models.boss.list_boss.android.*;
+import com.aurora.models.boss.list_boss.cell.SieuBoHung;
+import com.aurora.models.boss.list_boss.cell.XenBoHung;
+import com.aurora.models.boss.list_boss.doanh_trai.TrungUyTrang;
+import com.aurora.models.boss.list_boss.Broly.Broly;
+import com.aurora.models.boss.list_boss.Doraemon.Nobita;
+import com.aurora.models.boss.list_boss.Doraemon.Xeko;
+import com.aurora.models.boss.list_boss.Doraemon.Xuka;
+import com.aurora.models.boss.list_boss.FideBack.FideRobot;
+import com.aurora.models.boss.list_boss.NgucTu.SongokuTaAc;
+import com.aurora.models.boss.list_boss.fide.Fide;
+import com.aurora.models.boss.list_boss.Doraemon.Chaien;
+import com.aurora.models.player.Player;
+import com.aurora.server.ServerManager;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.aurora.network.io.Message;
 
 public class BossManager implements Runnable {
 
@@ -63,7 +65,6 @@ public class BossManager implements Runnable {
             return;
         }
         try {
-//            this.createBoss(BossID.CA_DIC);
             this.createBoss(BossID.BUBBLES);
             this.createBoss(BossID.AN_TROM);
             this.createBoss(BossID.CUMBER);
@@ -110,7 +111,7 @@ public class BossManager implements Runnable {
                 case BossID.TIEU_DOI_TRUONG:
                     return new TieuDoiTruong();
                 case BossID.AN_TROM:
-                    return new AnTrom();     
+                    return new AnTrom();
                 case BossID.KUKU:
                     return new Kuku();
                 case BossID.MAP_DAU_DINH:
@@ -118,40 +119,31 @@ public class BossManager implements Runnable {
                 case BossID.RAMBO:
                     return new Rambo();
                 case BossID.BUBBLES:
-                    return new Bubbles();    
+                    return new Bubbles();
                 case BossID.FIDE:
                     return new Fide();
-//                 case BossID.CA_DIC:
-//                    return new Cadic();     
-                  
                 case BossID.DR_KORE:
                     return new DrKore();
                 case BossID.ANDROID_19:
                     return new Android19();
-                    
                 case BossID.ANDROID_13:
                     return new Android13();
                 case BossID.ANDROID_14:
                     return new Android14();
                 case BossID.ANDROID_15:
                     return new Android15();
-                    
                 case BossID.PIC:
                     return new Pic();
                 case BossID.POC:
                     return new Poc();
                 case BossID.KING_KONG:
                     return new KingKong();
-                    
                 case BossID.XEN_BO_HUNG:
                     return new XenBoHung();
-                    
                 case BossID.SIEU_BO_HUNG:
                     return new SieuBoHung();
-                    
                 case BossID.TRUNG_UY_TRANG:
                     return new TrungUyTrang();
-
                 case BossID.XUKA:
                     return new Xuka();
                 case BossID.NOBITA:
@@ -162,38 +154,63 @@ public class BossManager implements Runnable {
                     return new Chaien();
                 case BossID.DORAEMON:
                     return new Doraemon();
-
                 case BossID.VUA_COLD:
-                    return new Kingcold();                    
+                    return new Kingcold();
                 case BossID.FIDE_ROBOT:
                     return new FideRobot();
-                    
                 case BossID.BLACK:
                     return new Black();
-                    
                 case BossID.XEN_CON:
                     return new Xencon();
-                    
                 case BossID.MABU:
                     return new Mabu();
-                    
-                    
                 case BossID.COOLER_GOLD:
                     return new CoolerGold();
                 case BossID.CUMBER:
-                    return new Cumber();     
+                    return new Cumber();
                 case BossID.SONGOKU_TA_AC:
                     return new SongokuTaAc();
-                    
                 case BossID.BROLY:
                     return new Broly();
-                    
-
                 default:
                     return null;
             }
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
+        }
+    }
+
+    public void showListBoss(Player player) {
+        if (!player.isAdmin()) {
+            return;
+        }
+        Message msg;
+        try {
+            msg = new Message(-96);
+            msg.writer().writeByte(0);
+            msg.writer().writeUTF("Boss");
+            for (int i = 0; i < bosses.size(); i++) {
+                Boss boss = this.bosses.get(i);
+                if (boss.zone == null) {
+                    continue;
+                }
+                msg.writer().writeInt((int) boss.id);
+                msg.writer().writeInt((int) boss.id);
+                msg.writer().writeShort(boss.data[0].getOutfit()[0]);
+                if (player.getSession().version > 214) {
+                    msg.writer().writeShort(-1);
+                }
+                msg.writer().writeShort(boss.data[0].getOutfit()[1]);
+                msg.writer().writeShort(boss.data[0].getOutfit()[2]);
+                msg.writer().writeUTF(boss.data[0].getName());
+                msg.writer().writeUTF("Sống");
+                msg.writer().writeUTF(boss.zone.map.mapName + "(" + boss.zone.map.mapId + ") khu " + boss.zone.zoneId + "");
+            }
+            player.sendMessage(msg);
+            msg.cleanup();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -207,6 +224,7 @@ public class BossManager implements Runnable {
                 }
                 Thread.sleep(150 - (System.currentTimeMillis() - st));
             } catch (Exception e) {
+                e.printStackTrace();
             }
 
         }

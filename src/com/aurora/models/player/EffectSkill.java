@@ -1,9 +1,9 @@
-package com.girlkun.models.player;
+package com.aurora.models.player;
 
-import com.girlkun.models.mob.Mob;
-import com.girlkun.services.EffectSkillService;
-import com.girlkun.services.ItemTimeService;
-import com.girlkun.utils.Util;
+import com.aurora.models.mob.Mob;
+import com.aurora.services.EffectSkillService;
+import com.aurora.services.ItemTimeService;
+import com.aurora.utils.Util;
 
 /**
  *

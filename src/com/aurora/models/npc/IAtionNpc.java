@@ -1,6 +1,6 @@
-package com.girlkun.models.npc;
+package com.aurora.models.npc;
 
-import com.girlkun.models.player.Player;
+import com.aurora.models.player.Player;
 
 /**
  *

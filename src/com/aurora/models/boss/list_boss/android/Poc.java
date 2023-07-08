@@ -1,15 +1,15 @@
-package com.girlkun.models.boss.list_boss.android;
+package com.aurora.models.boss.list_boss.android;
 
-import com.girlkun.consts.ConstPlayer;
-import com.girlkun.models.boss.Boss;
-import com.girlkun.models.boss.BossID;
-import com.girlkun.models.boss.BossStatus;
-import com.girlkun.models.boss.BossesData;
-import com.girlkun.models.map.ItemMap;
-import com.girlkun.models.player.Player;
-import com.girlkun.services.Service;
-import com.girlkun.services.TaskService;
-import com.girlkun.utils.Util;
+import com.aurora.consts.ConstPlayer;
+import com.aurora.models.boss.Boss;
+import com.aurora.models.boss.BossID;
+import com.aurora.models.boss.BossStatus;
+import com.aurora.models.boss.BossesData;
+import com.aurora.models.map.ItemMap;
+import com.aurora.models.player.Player;
+import com.aurora.services.Service;
+import com.aurora.services.TaskService;
+import com.aurora.utils.Util;
 
 /**
  *

@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.girlkun.models.boss.list_boss.FideBack;
+package com.aurora.models.boss.list_boss.FideBack;
 
-import com.girlkun.models.boss.Boss;
-import com.girlkun.models.boss.BossID;
-import com.girlkun.models.boss.BossesData;
-import com.girlkun.models.map.ItemMap;
-import com.girlkun.models.player.Player;
-import com.girlkun.models.skill.Skill;
-import com.girlkun.services.PetService;
-import com.girlkun.services.Service;
-import com.girlkun.utils.Util;
+import com.aurora.models.boss.Boss;
+import com.aurora.models.boss.BossID;
+import com.aurora.models.boss.BossesData;
+import com.aurora.models.map.ItemMap;
+import com.aurora.models.player.Player;
+import com.aurora.models.skill.Skill;
+import com.aurora.services.PetService;
+import com.aurora.services.Service;
+import com.aurora.utils.Util;
 import java.util.Random;
 
 /**

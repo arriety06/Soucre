@@ -1,18 +1,18 @@
-package com.girlkun.models.player;
+package com.aurora.models.player;
 
-import com.girlkun.consts.ConstPlayer;
-import com.girlkun.services.MapService;
-import com.girlkun.models.mob.Mob;
-import com.girlkun.models.skill.Skill;
-import com.girlkun.utils.SkillUtil;
-import com.girlkun.services.Service;
-import com.girlkun.utils.Util;
-import com.girlkun.network.io.Message;
-import com.girlkun.services.ItemTimeService;
-import com.girlkun.services.PlayerService;
-import com.girlkun.services.SkillService;
-import com.girlkun.services.func.ChangeMapService;
-import com.girlkun.utils.TimeUtil;
+import com.aurora.consts.ConstPlayer;
+import com.aurora.services.MapService;
+import com.aurora.models.mob.Mob;
+import com.aurora.models.skill.Skill;
+import com.aurora.utils.SkillUtil;
+import com.aurora.services.Service;
+import com.aurora.utils.Util;
+import com.aurora.network.io.Message;
+import com.aurora.services.ItemTimeService;
+import com.aurora.services.PlayerService;
+import com.aurora.services.SkillService;
+import com.aurora.services.func.ChangeMapService;
+import com.aurora.utils.TimeUtil;
 
 /**beo a t met vl
  *

@@ -1,6 +1,6 @@
-package com.girlkun.services.func;
+package com.aurora.services.func;
 
-import com.girlkun.models.item.Item;
+import com.aurora.models.item.Item;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,11 +1,11 @@
-package com.girlkun.models.matches.pvp;
+package com.aurora.models.matches.pvp;
 
-import com.girlkun.models.matches.PVP;
-import com.girlkun.models.matches.TYPE_LOSE_PVP;
-import com.girlkun.models.matches.TYPE_PVP;
-import com.girlkun.models.player.Player;
-import com.girlkun.services.Service;
-import com.girlkun.utils.Util;
+import com.aurora.models.matches.PVP;
+import com.aurora.models.matches.TYPE_LOSE_PVP;
+import com.aurora.models.matches.TYPE_PVP;
+import com.aurora.models.player.Player;
+import com.aurora.services.Service;
+import com.aurora.utils.Util;
 
 /**
  *

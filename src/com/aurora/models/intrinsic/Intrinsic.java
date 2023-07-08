@@ -1,4 +1,4 @@
-package com.girlkun.models.intrinsic;
+package com.aurora.models.intrinsic;
 
 /**
  *

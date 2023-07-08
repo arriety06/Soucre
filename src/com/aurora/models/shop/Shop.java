@@ -1,4 +1,4 @@
-package com.girlkun.models.shop;
+package com.aurora.models.shop;
 
 import java.util.ArrayList;
 import java.util.List;

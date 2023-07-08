@@ -1,6 +1,6 @@
-package com.girlkun.models.task;
+package com.aurora.models.task;
 
-import com.girlkun.consts.ConstTask;
+import com.aurora.consts.ConstTask;
 
 /**
  *

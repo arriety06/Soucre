@@ -1,14 +1,14 @@
-package com.girlkun.models.player;
+package com.aurora.models.player;
 
-import com.girlkun.models.item.Item;
-import com.girlkun.models.mob.Mob;
-import com.girlkun.services.ItemService;
-import com.girlkun.services.PlayerService;
-import com.girlkun.services.Service;
-import com.girlkun.services.InventoryServiceNew;
-import com.girlkun.services.MapService;
-import com.girlkun.utils.Logger;
-import com.girlkun.utils.Util;
+import com.aurora.models.item.Item;
+import com.aurora.models.mob.Mob;
+import com.aurora.services.ItemService;
+import com.aurora.services.PlayerService;
+import com.aurora.services.Service;
+import com.aurora.services.InventoryServiceNew;
+import com.aurora.services.MapService;
+import com.aurora.utils.Logger;
+import com.aurora.utils.Util;
 import java.util.ArrayList;
 import java.util.List;
 

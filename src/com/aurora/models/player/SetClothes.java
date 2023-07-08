@@ -1,6 +1,6 @@
-package com.girlkun.models.player;
+package com.aurora.models.player;
 
-import com.girlkun.models.item.Item;
+import com.aurora.models.item.Item;
 
 /**
  *

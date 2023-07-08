@@ -65,6 +65,105 @@ public class NpcFactory {
 
     }
 
+    public static Npc createNPC(int mapId, int status, int cx, int cy, int tempId) {
+        int avatar = Manager.NPC_TEMPLATES.get(tempId).avatar;
+        try {
+            switch (tempId) {
+                case ConstNpc.QUY_LAO_KAME:
+                    return quyLaoKame(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.TRUONG_LAO_GURU:
+                    return truongLaoGuru(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.VUA_VEGETA:
+                    return vuaVegeta(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.ONG_GOHAN:
+                case ConstNpc.ONG_MOORI:
+                case ConstNpc.ONG_PARAGUS:
+                    return ongGohan_ongMoori_ongParagus(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.BUNMA:
+                    return bulmaQK(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.DENDE:
+                    return dende(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.APPULE:
+                    return appule(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.DR_DRIEF:
+                    return drDrief(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.CARGO:
+                    return cargo(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.CUI:
+                    return cui(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.SANTA:
+                    return santa(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.URON:
+                    return uron(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.BA_HAT_MIT:
+                    return baHatMit(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.RUONG_DO:
+                    return ruongDo(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.DAU_THAN:
+                    return dauThan(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.CALICK:
+                    return calick(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.JACO:
+                    return jaco(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.THUONG_DE:
+                    return thuongDe(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.THAN_VU_TRU:
+                    return thanVuTru(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.KIBIT:
+                    return kibit(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.OSIN:
+                    return osin(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.LINH_CANH:
+                    return linhCanh(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.QUA_TRUNG:
+                    return quaTrung(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.QUOC_VUONG:
+                    return quocVuong(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.BUNMA_TL:
+                    return bulmaTL(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.RONG_OMEGA:
+                    return rongOmega(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.RONG_1S:
+                case ConstNpc.RONG_2S:
+                case ConstNpc.RONG_3S:
+                case ConstNpc.RONG_4S:
+                case ConstNpc.RONG_5S:
+                case ConstNpc.RONG_6S:
+                case ConstNpc.RONG_7S:
+                    return rong1_to_7s(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.NPC_64:
+                    return npcThienSu64(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.BILL:
+                    return bill(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.BO_MONG:
+                    return boMong(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.GOKU_SSJ:
+                    return gokuSSJ_1(mapId, status, cx, cy, tempId, avatar);
+                case ConstNpc.GOKU_SSJ_:
+                    return gokuSSJ_2(mapId, status, cx, cy, tempId, avatar);
+                default:
+                    return new Npc(mapId, status, cx, cy, tempId, avatar) {
+                        @Override
+                        public void openBaseMenu(Player player) {
+                            if (canOpenNpc(player)) {
+                                super.openBaseMenu(player);
+                            }
+                        }
+
+                        @Override
+                        public void confirmMenu(Player player, int select) {
+                            if (canOpenNpc(player)) {
+//                                ShopService.gI().openShopNormal(player, this, ConstNpc.SHOP_BUNMA_TL_0, 0, player.gender);
+                            }
+                        }
+                    };
+            }
+        } catch (Exception e) {
+            Logger.logException(NpcFactory.class, e, "Lỗi load npc");
+            return null;
+        }
+    }
+
     private static Npc quyLaoKame(int mapId, int status, int cx, int cy, int tempId, int avartar) {
         return new Npc(mapId, status, cx, cy, tempId, avartar) {
             @Override
@@ -175,7 +274,7 @@ public class NpcFactory {
                     if (!TaskService.gI().checkDoneTaskTalkNpc(player, this)) {
                         this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                 "Con cố gắng theo %1 học thành tài, đừng lo lắng cho ta."
-                                .replaceAll("%1", player.gender == ConstPlayer.TRAI_DAT ? "Quy lão Kamê"
+                                        .replaceAll("%1", player.gender == ConstPlayer.TRAI_DAT ? "Quy lão Kamê"
                                                 : player.gender == ConstPlayer.NAMEC ? "Trưởng lão Guru" : "Vua Vegeta"),
                                 "Đổi mật khẩu", "Nhận 200k ngọc xanh", "Nhận 2 tỷ vàng", "Nhận đệ tử", "Test");
                     }
@@ -465,7 +564,6 @@ public class NpcFactory {
         return new Npc(mapId, status, cx, cy, tempId, avartar) {
 
 //            private final int COST_FIND_BOSS = 20000000;
-
             @Override
             public void openBaseMenu(Player pl) {
                 if (canOpenNpc(pl)) {
@@ -704,7 +802,6 @@ public class NpcFactory {
                         if (player.iDMark.isBaseMenu()) {
                             switch (select) {
                                 case 0:
-//                                                CombineService.gI().openTabCombine(player, CombineService.EP_SAO_TRANG_BI);
                                     CombineServiceNew.gI().openTabCombine(player, CombineServiceNew.EP_SAO_TRANG_BI);
                                     break;
                                 case 1:
@@ -976,11 +1073,11 @@ public class NpcFactory {
                         this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                 "Con muốn làm gì nào", "Đến Kaio", "Quay số\nmay mắn");
                     }
-                    if (this.mapId == 0){
+                    if (this.mapId == 0) {
                         this.createOtherMenu(player, 0,
                                 "Con muốn gì nào??", "Đến DHVT", "Đổi Cải trang sự kiên", "Item Eat");
                     }
-                    if (this.mapId == 129){
+                    if (this.mapId == 129) {
                         this.createOtherMenu(player, 0,
                                 "Con muốn gì nào?", "Quay ve");
                     }
@@ -990,41 +1087,41 @@ public class NpcFactory {
             @Override
             public void confirmMenu(Player player, int select) {
                 if (canOpenNpc(player)) {
-                    if (this.mapId == 0){
-                        if (player.iDMark.getIndexMenu() == 0){ // 
-                            switch (select){
+                    if (this.mapId == 0) {
+                        if (player.iDMark.getIndexMenu() == 0) { // 
+                            switch (select) {
                                 case 0:
                                     ChangeMapService.gI().changeMapBySpaceShip(player, 129, -1, 354);
                                     Service.getInstance().changeFlag(player, Util.nextInt(8));
                                     break; // qua dhvt
                                 case 1:  // 
                                     this.createOtherMenu(player, 1,
-                                "Bạn có muốn đổi 350 điểm PVP lấy \n|6|Cải trang Thủy Thủ Mặt Trăng với tất cả chỉ số là 80%\n ", "Ok", "Tu choi");
-                                   // bat menu doi item
+                                            "Bạn có muốn đổi 350 điểm PVP lấy \n|6|Cải trang Thủy Thủ Mặt Trăng với tất cả chỉ số là 80%\n ", "Ok", "Tu choi");
+                                    // bat menu doi item
                                     break;
                                 case 2:
                                     this.createOtherMenu(player, 2,
-                                "Bạn muốn đổi 20 điểm PVP\n|6|Để đổi lấy x20 ITEM không?",  "Giáp xên", "Bổ Huyết","Cuồng Nộ","Bổ khí","Tu choi");
+                                            "Bạn muốn đổi 20 điểm PVP\n|6|Để đổi lấy x20 ITEM không?", "Giáp xên", "Bổ Huyết", "Cuồng Nộ", "Bổ khí", "Tu choi");
                                     break;
-                                   
+
                             }
                         }
-                        if (player.iDMark.getIndexMenu() == 1){ // action doi item
-                            switch (select){
+                        if (player.iDMark.getIndexMenu() == 1) { // action doi item
+                            switch (select) {
                                 case 0: // trade
-                                    if (player.pointPvp >= 350){
+                                    if (player.pointPvp >= 350) {
                                         player.pointPvp -= 350;
-                                        Item item = ItemService.gI().createNewItem((short)760);
+                                        Item item = ItemService.gI().createNewItem((short) 760);
 //                                         item.quantity = 20;
-                                        item.itemOptions.add(new ItemOption(49,80));
-                                         item.itemOptions.add(new ItemOption(77,80));
-                                         item.itemOptions.add(new ItemOption(103,80));
+                                        item.itemOptions.add(new ItemOption(49, 80));
+                                        item.itemOptions.add(new ItemOption(77, 80));
+                                        item.itemOptions.add(new ItemOption(103, 80));
 //                                       item.itemOptions.add(new ItemOption(7,8000));
 //                                       item.itemOptions.add(new ItemOption(159,0));
                                         InventoryServiceNew.gI().addItemBag(player, item);
                                         Service.getInstance().sendThongBao(player, "Chuc mung ban da doi thanh cong Cai Trang !");
-                                    }else{
-                                        Service.getInstance().sendThongBao(player, "Khong du diem, ban con " +(350 - player.pointPvp) +" diem nua");
+                                    } else {
+                                        Service.getInstance().sendThongBao(player, "Khong du diem, ban con " + (350 - player.pointPvp) + " diem nua");
                                     }
                                     break;
 //                                 case 1: // trade
@@ -1044,112 +1141,112 @@ public class NpcFactory {
 //                                    }
 //                                    break;   
                                 case 2: // canel
-                                  break;
+                                    break;
                             }
                         }
-                        if (player.iDMark.getIndexMenu() == 2){ // action doi item 2
-                            switch (select){
+                        if (player.iDMark.getIndexMenu() == 2) { // action doi item 2
+                            switch (select) {
                                 case 0: // trade
-                                    if (player.pointPvp >= 20){
+                                    if (player.pointPvp >= 20) {
                                         player.pointPvp -= 20; // - 10 diem PVP
-                                        Item item = ItemService.gI().createNewItem((short)384);// id item giap xen
-                                         item.quantity = 20;
+                                        Item item = ItemService.gI().createNewItem((short) 384);// id item giap xen
+                                        item.quantity = 20;
 //                                        item.itemOptions.add(new ItemOption(49,25)); // option suc danh 25%
 ////                                        item.itemOptions.add(new ItemOption(159,0)); // option x4 kame
                                         InventoryServiceNew.gI().addItemBag(player, item);
                                         Service.getInstance().sendThongBao(player, "Chúc mừng bạn đã đổi được x20 Giáp xên!");
-                                    }else{
-                                        Service.getInstance().sendThongBao(player, "Bạn không đủ điểm, bạn còn " +(20 - player.pointPvp) +" điểm để đổi nữa");
+                                    } else {
+                                        Service.getInstance().sendThongBao(player, "Bạn không đủ điểm, bạn còn " + (20 - player.pointPvp) + " điểm để đổi nữa");
                                     }
                                 case 1: // trade
-                                    if (player.pointPvp >= 20){
+                                    if (player.pointPvp >= 20) {
                                         player.pointPvp -= 20; // - 10 diem PVP
-                                        Item item = ItemService.gI().createNewItem((short)382); // id item bo huyet
-                                         item.quantity = 20;
+                                        Item item = ItemService.gI().createNewItem((short) 382); // id item bo huyet
+                                        item.quantity = 20;
 //                                        item.itemOptions.add(new ItemOption(49,25)); // option suc danh 25%
 //                                        item.itemOptions.add(new ItemOption(159,0)); // option x4 kame
                                         InventoryServiceNew.gI().addItemBag(player, item);
                                         Service.getInstance().sendThongBao(player, "Chúc mừng bạn đã đổi được x20 Bổ huyết!");
-                                    }else{
-                                        Service.getInstance().sendThongBao(player, "Bạn không đủ điểm, bạn còn " +(20 - player.pointPvp) +" điểm để đổi nữa");
+                                    } else {
+                                        Service.getInstance().sendThongBao(player, "Bạn không đủ điểm, bạn còn " + (20 - player.pointPvp) + " điểm để đổi nữa");
                                     }
                                 case 2: // trade
-                                    if (player.pointPvp >= 20){
+                                    if (player.pointPvp >= 20) {
                                         player.pointPvp -= 20; // - 10 diem PVP
-                                        Item item = ItemService.gI().createNewItem((short)381); // id item cuong no
-                                         item.quantity = 20;
+                                        Item item = ItemService.gI().createNewItem((short) 381); // id item cuong no
+                                        item.quantity = 20;
 //                                        item.itemOptions.add(new ItemOption(49,25)); // option suc danh 25%
 //                                        item.itemOptions.add(new ItemOption(159,0)); // option x4 kame
                                         InventoryServiceNew.gI().addItemBag(player, item);
                                         Service.getInstance().sendThongBao(player, "Chúc mừng bạn đã đổi được x20 Cuồng nộ!");
-                                    }else{
-                                        Service.getInstance().sendThongBao(player, "Bạn không đủ điểm, bạn còn " +(20 - player.pointPvp) +" điểm để đổi nữa");
+                                    } else {
+                                        Service.getInstance().sendThongBao(player, "Bạn không đủ điểm, bạn còn " + (20 - player.pointPvp) + " điểm để đổi nữa");
                                     }
-                                 case 3: // trade
-                                    if (player.pointPvp >= 20){
+                                case 3: // trade
+                                    if (player.pointPvp >= 20) {
                                         player.pointPvp -= 20; // - 10 diem PVP
-                                        Item item = ItemService.gI().createNewItem((short)383); // id item bo khi
-                                         item.quantity = 20;
+                                        Item item = ItemService.gI().createNewItem((short) 383); // id item bo khi
+                                        item.quantity = 20;
 //                                        item.itemOptions.add(new ItemOption(49,25)); // option suc danh 25%
 //                                        item.itemOptions.add(new ItemOption(159,0)); // option x4 kame
                                         InventoryServiceNew.gI().addItemBag(player, item);
                                         Service.getInstance().sendThongBao(player, "Chúc mừng bạn đã đổi được x20 Bổ khí!");
-                                    }else{
-                                        Service.getInstance().sendThongBao(player, "Bạn không đủ điểm, bạn còn " +(20 - player.pointPvp) +" điểm để đổi nữa");
+                                    } else {
+                                        Service.getInstance().sendThongBao(player, "Bạn không đủ điểm, bạn còn " + (20 - player.pointPvp) + " điểm để đổi nữa");
                                     }
                                     break;
-                        
+
                                 case 4: // canel
-                                  break;
-//                            }
-                        } 
-                    }
-                    if (this.mapId == 129){
-                        switch (select){
-                            case 0: // quay ve
-                                ChangeMapService.gI().changeMapBySpaceShip(player, 0, -1, 354);
-                                break;
-                        }
-                    }
-                    if (this.mapId == 45) {
-                        if (player.iDMark.isBaseMenu()) {
-                            switch (select) {
-                                case 0:
-                                    ChangeMapService.gI().changeMapBySpaceShip(player, 48, -1, 354);
                                     break;
-                                case 1:
-                                    this.createOtherMenu(player, ConstNpc.MENU_CHOOSE_LUCKY_ROUND,
-                                            "Con muốn làm gì nào?", "Quay bằng\nvàng",
-                                            "Rương phụ\n("
-                                            + (player.inventory.itemsBoxCrackBall.size()
-                                            - InventoryServiceNew.gI().getCountEmptyListItem(player.inventory.itemsBoxCrackBall))
-                                            + " món)",
-                                            "Xóa hết\ntrong rương", "Đóng");
+//                            }
+                            }
+                        }
+                        if (this.mapId == 129) {
+                            switch (select) {
+                                case 0: // quay ve
+                                    ChangeMapService.gI().changeMapBySpaceShip(player, 0, -1, 354);
                                     break;
                             }
-                        } else if (player.iDMark.getIndexMenu() == ConstNpc.MENU_CHOOSE_LUCKY_ROUND) {
-                            switch (select) {
-                                case 0:
-                                    LuckyRound.gI().openCrackBallUI(player, LuckyRound.USING_GOLD);
-                                    break;
-                                case 1:
-                                    ShopServiceNew.gI().opendShop(player, "ITEMS_LUCKY_ROUND", true);
-                                    break;
-                                case 2:
-                                    NpcService.gI().createMenuConMeo(player,
-                                            ConstNpc.CONFIRM_REMOVE_ALL_ITEM_LUCKY_ROUND, this.avartar,
-                                            "Con có chắc muốn xóa hết vật phẩm trong rương phụ? Sau khi xóa "
-                                            + "sẽ không thể khôi phục!",
-                                            "Đồng ý", "Hủy bỏ");
-                                    break;
+                        }
+                        if (this.mapId == 45) {
+                            if (player.iDMark.isBaseMenu()) {
+                                switch (select) {
+                                    case 0:
+                                        ChangeMapService.gI().changeMapBySpaceShip(player, 48, -1, 354);
+                                        break;
+                                    case 1:
+                                        this.createOtherMenu(player, ConstNpc.MENU_CHOOSE_LUCKY_ROUND,
+                                                "Con muốn làm gì nào?", "Quay bằng\nvàng",
+                                                "Rương phụ\n("
+                                                + (player.inventory.itemsBoxCrackBall.size()
+                                                - InventoryServiceNew.gI().getCountEmptyListItem(player.inventory.itemsBoxCrackBall))
+                                                + " món)",
+                                                "Xóa hết\ntrong rương", "Đóng");
+                                        break;
+                                }
+                            } else if (player.iDMark.getIndexMenu() == ConstNpc.MENU_CHOOSE_LUCKY_ROUND) {
+                                switch (select) {
+                                    case 0:
+                                        LuckyRound.gI().openCrackBallUI(player, LuckyRound.USING_GOLD);
+                                        break;
+                                    case 1:
+                                        ShopServiceNew.gI().opendShop(player, "ITEMS_LUCKY_ROUND", true);
+                                        break;
+                                    case 2:
+                                        NpcService.gI().createMenuConMeo(player,
+                                                ConstNpc.CONFIRM_REMOVE_ALL_ITEM_LUCKY_ROUND, this.avartar,
+                                                "Con có chắc muốn xóa hết vật phẩm trong rương phụ? Sau khi xóa "
+                                                + "sẽ không thể khôi phục!",
+                                                "Đồng ý", "Hủy bỏ");
+                                        break;
+                                }
                             }
                         }
                     }
                 }
             }
-        }
         };
-                }
+    }
 
     public static Npc thanVuTru(int mapId, int status, int cx, int cy, int tempId, int avartar) {
         return new Npc(mapId, status, cx, cy, tempId, avartar) {
@@ -1733,8 +1830,8 @@ public class NpcFactory {
                     if (this.mapId == 47) {
                         this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                 "Xin chào, cậu muốn tôi giúp gì?", "Nhiệm vụ\nhàng ngày", "Từ chối");
-                        } else if (this.mapId == 84) {
-                         this.createOtherMenu(player, ConstNpc.BASE_MENU,
+                    } else if (this.mapId == 84) {
+                        this.createOtherMenu(player, ConstNpc.BASE_MENU,
                                 "Xin chào, cậu muốn tôi giúp gì?", "Nhiệm vụ\nhàng ngày", "Từ chối");
                     }
                     if (this.mapId == 47) {
@@ -1890,105 +1987,6 @@ public class NpcFactory {
                 }
             }
         };
-    }
-
-    public static Npc createNPC(int mapId, int status, int cx, int cy, int tempId) {
-        int avatar = Manager.NPC_TEMPLATES.get(tempId).avatar;
-        try {
-            switch (tempId) {
-                case ConstNpc.QUY_LAO_KAME:
-                    return quyLaoKame(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.TRUONG_LAO_GURU:
-                    return truongLaoGuru(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.VUA_VEGETA:
-                    return vuaVegeta(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.ONG_GOHAN:
-                case ConstNpc.ONG_MOORI:
-                case ConstNpc.ONG_PARAGUS:
-                    return ongGohan_ongMoori_ongParagus(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.BUNMA:
-                    return bulmaQK(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.DENDE:
-                    return dende(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.APPULE:
-                    return appule(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.DR_DRIEF:
-                    return drDrief(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.CARGO:
-                    return cargo(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.CUI:
-                    return cui(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.SANTA:
-                    return santa(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.URON:
-                    return uron(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.BA_HAT_MIT:
-                    return baHatMit(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.RUONG_DO:
-                    return ruongDo(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.DAU_THAN:
-                    return dauThan(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.CALICK:
-                    return calick(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.JACO:
-                    return jaco(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.THUONG_DE:
-                    return thuongDe(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.THAN_VU_TRU:
-                    return thanVuTru(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.KIBIT:
-                    return kibit(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.OSIN:
-                    return osin(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.LINH_CANH:
-                    return linhCanh(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.QUA_TRUNG:
-                    return quaTrung(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.QUOC_VUONG:
-                    return quocVuong(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.BUNMA_TL:
-                    return bulmaTL(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.RONG_OMEGA:
-                    return rongOmega(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.RONG_1S:
-                case ConstNpc.RONG_2S:
-                case ConstNpc.RONG_3S:
-                case ConstNpc.RONG_4S:
-                case ConstNpc.RONG_5S:
-                case ConstNpc.RONG_6S:
-                case ConstNpc.RONG_7S:
-                    return rong1_to_7s(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.NPC_64:
-                    return npcThienSu64(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.BILL:
-                    return bill(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.BO_MONG:
-                    return boMong(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.GOKU_SSJ:
-                    return gokuSSJ_1(mapId, status, cx, cy, tempId, avatar);
-                case ConstNpc.GOKU_SSJ_:
-                    return gokuSSJ_2(mapId, status, cx, cy, tempId, avatar);
-                default:
-                    return new Npc(mapId, status, cx, cy, tempId, avatar) {
-                        @Override
-                        public void openBaseMenu(Player player) {
-                            if (canOpenNpc(player)) {
-                                super.openBaseMenu(player);
-                            }
-                        }
-
-                        @Override
-                        public void confirmMenu(Player player, int select) {
-                            if (canOpenNpc(player)) {
-//                                ShopService.gI().openShopNormal(player, this, ConstNpc.SHOP_BUNMA_TL_0, 0, player.gender);
-                            }
-                        }
-                    };
-            }
-        } catch (Exception e) {
-            Logger.logException(NpcFactory.class, e, "Lỗi load npc");
-            return null;
-        }
     }
 
     //girlkun75-mark

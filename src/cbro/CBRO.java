@@ -18,6 +18,9 @@ public class CBRO {
         /**
          * Péo dz??
          */
+        //meo meo
+        System.out.println("fuck each other");
     }
+
     
 }
